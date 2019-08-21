@@ -1,5 +1,4 @@
-
-
+# -*- coding: utf-8 -*-
 def maiorDeTres(num1, num2, num3):
     if num1 > num2 and num1 > num3:
         print("o maior numero é {}".format(num1))

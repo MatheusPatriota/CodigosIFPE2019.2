@@ -1,4 +1,6 @@
-import numpy as np
+import numpy as np     
+import plotly.graph_objects as go 
+
 
 # 17 linhas
 # 11 colunas
@@ -19,7 +21,18 @@ for i in range(17):
         imc = calculoIMC(coluna[j], linha[i])
         matriz[i][j] = imc
 
-print(matriz)
-# print(coluna)
-# print(linha)
-# print(matriz)
+fig = go.Figure()
+
+fig.add_trace(go.Heatmap(
+                   z=matriz,
+                   x= coluna,
+                   y=linha,
+                   colorscale=[[0, "rgb(215,109,109)"],
+                              [0.30, "rgb(255,205,0)"],
+                              [0.31, "rgb(178,223,138)"],
+                              [0.40, "rgb(51,160,44)"],
+                              [0.60, "rgb(251,154,153)"],
+                              [1, "rgb(227,26,28)"]],))
+fig.show()
+
+
