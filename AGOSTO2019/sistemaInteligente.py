@@ -9,7 +9,7 @@ fimUser = int(input("Digite o fim do intervalo: "))
 lista = list(range(fimUser+1))
 numero = int(fimUser/2)
 comeco = comecoUser
-fim = len(lista)
+fim = len(lista)-1
 
 print("Pense em um numero entre {:} a {:} ".format(comeco,fim-1))
 while True:
@@ -24,7 +24,7 @@ while True:
     lista = list(range(comeco,numero))
     fim = numero
     if len(lista) <=1:
-      numero = comeco
+      numero = lista[0]
     else:
       numero = lista[int(len(lista)/2)]
       fim = lista[len(lista)-1]
@@ -33,7 +33,7 @@ while True:
   elif  entrada == "maior":
     lista = list(range(numero+1,fim))
     if len(lista) <= 1:
-      numero = fim
+      numero = lista[0]
     else:
       numero = lista[int(len(lista)/2)]
       comeco = lista[0]
