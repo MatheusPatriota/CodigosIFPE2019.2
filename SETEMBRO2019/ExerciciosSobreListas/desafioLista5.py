@@ -4,12 +4,12 @@
 
 # variaveis
 codigosProdutos = []
-estoqueProduto = []
+estoquesProduto = []
 
 #  preenchimento da  lista
 codigosProdutos = list(range(10))
 for i in range(10):
-  estoqueProduto.append(10) 
+  estoquesProduto.append(10) 
 
 # logica 
 print("** Bem vindo a Matheus store's **")
@@ -18,14 +18,31 @@ while (True):
   if (codigoCliente == 0):
     break;
   else:
-    codProd = int(input("Informe o codigo do produto: "))
+    print("Bem vindo - Os produtos disponiveis para compra são: ")
+    print("1 - Leite Integral")
+    print("2 - Maminha da Vaquinha")
+    print("3 - Carne de Touro")
+    print("4 - Xucrute Integral")
+    print("5 - Ovos")
+    print("6 - Agua")
+    print("7 - Beijinho")
+    print("8 - Brigadeiro")
+    print("9 - Papel Toalha")
+    print("10 - Coco Ralado")
+    codProd = int(input("Informe o codigo do produto: ")) - 1
+
     if(codProd in codigosProdutos):
       quantidadeProduto = int(input("informe a quantidade do produto: "))
       # pedido so pode ser atendido integralmente 
-      if(estoqueProduto[codProd] >= quantidadeProduto):
-        estoqueProduto[codProd] = estoqueProduto[codProd] - quantidadeProduto
+      if(estoquesProduto[codProd] >= quantidadeProduto):
+        estoquesProduto[codProd] = estoquesProduto[codProd] - quantidadeProduto
         print("Pedido Atendido. Obrigado e volte sempre!")
       else:
         print("Não temos estoque suficiente dessa mercadoria.")
     else: 
       print("Código Inexistente.")  
+
+print()
+print("** O Estoque restante foi **")
+print(codigosProdutos)
+print(estoquesProduto)
