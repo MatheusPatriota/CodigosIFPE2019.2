@@ -20,15 +20,14 @@ elif len(matriz1) < len(matriz2):
     matrizMenor = matriz1
 
 if matrizMaior == None and matrizMenor == None:
-    for i in range(len(matrizFinal)):
-
-        for j in range(len(matrizFinal[0])):
-            elem1 = matrizFinal[i][j]
+    for i in range(len(matriz1)):
+        coluna = []
+        for j in range(len(matriz1[0])):
+            elem1 = matriz1[i][j]
             elem2 = matriz2[i][j]
             coluna.append(elem1 + elem2)
 
-        linha.append(coluna)
-        matrizFinal.append(linha)
+        matrizFinal.append(coluna)
 
 
 print(matriz1)
