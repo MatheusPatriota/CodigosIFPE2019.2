@@ -8,8 +8,8 @@ def calculaQntDegraus(alt):
     qntDegraus = 0
     somatorio = 0
     while somatorio < alt:
-        qntDegraus +=1
-        somatorio+=0.3
+        qntDegraus = qtdDegraus + 1
+        somatorio = somatorio + 0.3
     
     return qntDegraus
 
