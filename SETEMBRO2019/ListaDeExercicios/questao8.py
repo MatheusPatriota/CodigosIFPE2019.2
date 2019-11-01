@@ -12,7 +12,8 @@
 # acima de 1000 5%
 
 # entrada
-salario = float(input("Digite o valor do seu salario atual: "))
+salario = input("Digite o valor do seu salario atual: ")
+salarioFloat = float(salario)
 
 # condicionais
 if(salario > 0 and salario <= 300):
