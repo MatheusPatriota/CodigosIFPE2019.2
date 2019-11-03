@@ -1,3 +1,6 @@
+# Matheus da Silva Coimbra Patriota
+# 20192EWBJ0027
+
 # resposta do exercicio
 perg1 = input("Telefonou? ")
 perg2 = input("Esteve? ")
