@@ -72,7 +72,7 @@ def quantia(acertos):
         print("Valendo R$ 500 mil reais ")
     elif acertos == 16:
         print("Pergunta Final")
-        print("Valendo R$ 1 milhão ")
+        print("Valendo R$ 1 milhão de Reais ")
 
 # abertura de arquivos
 p = open("perguntas.txt","r")
@@ -113,7 +113,6 @@ while True:
             for j in range(com,fim):
                 print(cont,"-",alternativas[j])
                 cont +=1
-
             resposta = input("Informe a resposta do participante: ")
             if resposta == respostas[contagem]:
                 pontuacao += 1
@@ -165,7 +164,7 @@ participantesOrdenados = removeQuebraLinha(so.readlines())
 
 print("Pontuação Final dos Participantes: ")
 for linha in participantesOrdenados:
-    print(linha)
+    print(linha + " Pontos")
 
 so.close()    
 p.close()
