@@ -1,7 +1,6 @@
 # Aluno: Matheus da Silva Coimbra Patriota
 # Curso: Engenharia de Software
 
-
 import os
 
 alunos = {}
@@ -47,7 +46,7 @@ def removeUltimo(str) :
     return str
 
 def lerBD(arquivo):
-  f = open(arquivo, 'r',encoding="utf-8")
+  f = open(arquivo, 'r',encoding="latin-1")
   conteudo = f.readlines()
   bdAlunos = {}
   temp = []
@@ -204,6 +203,40 @@ while True:
       print("----------------------------------------------")
       imprimeAlunos(alunos)
       print("----------------------------------------------")
+
+      print("Deseja consultar as disciplinas de algum aluno?")
+      print("1 - Sim")
+      print("2 - Não")
+      opcao =  int(input("Informe sua escolha: "))
+
+      if opcao == 1:
+        print()
+        cpf = input("Informe o CPF do aluno: ")
+
+        while not estaRegistrado(cpf):
+          print("CPF inválido, por favor tente novamente!")
+          cpf = input("Informe o CPF do aluno: ")
+        
+        if len(alunos[cpf][1]) == 0:
+          print(alunos[cpf][0]+" não possui disciplinas cadastradas!")
+          print()
+        else:
+          disciplinas = alunos[cpf][1]
+          dic = disciplinas[0]
+          nomeAlunoConsulta = alunos[cpf][0]
+          chaves =  list(disciplinas[0])
+
+          print("----------------------------------------------")
+          print("|          Consulta de disciplinas           |")
+          print("----------------------------------------------")
+          print("| " + "Aluno: " + nomeAlunoConsulta)
+          print("| Código   -   Disciplina -   Semestre       |")
+          
+          for i in chaves:
+            print("|    ", i, dic[i][0], dic[i][1])
+          
+            
+          print()
 
     elif operacao == 4:
       print("----------------------------------------------")
